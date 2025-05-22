@@ -1,12 +1,11 @@
-# .github/workflows/frontend-docker-deploy.yml (or your preferred filename)
-name: Build Frontend Docker Image & Deploy
+name: Build Docker Images & Deploy Android
 
 on:
   push:
     branches: [ main ] # Trigger workflow on pushes to the main branch
 
 jobs:
-  build-and-deploy-frontend: # Renamed job for clarity
+  build-and-deploy:
     runs-on: ubuntu-latest # Use a Linux runner
 
     steps:
@@ -18,51 +17,30 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20' # Use your project's Node.js version
-
-    # --- Angular Frontend Build (at repository root) ---
-    - name: Install Project Dependencies
+        
+    # --- Client Build ---
+    - name: Install Client Project Dependencies
       run: npm install
-      # working-directory removed, commands run at root
+      working-directory: ./felix-pelletier-website
 
     - name: Build Angular Web App
-      run: npx ng build --configuration production
-      # working-directory removed, commands run at root
-
-    - name: List output of Angular build # DEBUGGING STEP
-      run: ls -R ./dist
-      # working-directory removed, command runs at root
-
-    - name: Check for .dockerignore in root directory # DEBUGGING STEP
-      run: |
-        echo "Checking for .dockerignore in root directory..."
-        if [ -f ".dockerignore" ]; then
-          echo "Found .dockerignore in root. Contents:"
-          cat .dockerignore
-        else
-          echo "No .dockerignore file found in root directory."
-        fi
-      # working-directory removed, command runs at root
-
-    # --- Docker Setup & Build/Push Frontend ---
+      run: npx ng build --configuration=production
+      working-directory: ./felix-pelletier-website
+      
+    # --- Docker Setup & Build/Push ---
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }} # Should be 'felixapelletierr'
-        password: ${{ secrets.FPWEB }}    # Your Docker Hub Personal Access Token
-
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.FPWEB }} # Use the Access Token secret
+        
+      
     - name: Build and push Frontend image
       uses: docker/build-push-action@v6
       with:
-        context: . # Context is now the repository root, where Dockerfile and 'dist' folder are
+        context: ./felix-pelletier-website # Assumes Dockerfile is in the 'client' directory
         push: true
         tags: felixapelletierr/fp-developpement:latest # Your frontend image tag
-        # file: ./Dockerfile # Optional: if your Dockerfile has a non-standard name or location relative to context
-
-    # --- Commented out Backend Steps ---
-    # ... (Backend steps remain commented out) ...
-
-    # --- Commented out Android Build Steps ---
-    # ... (Android steps remain commented out) ...
