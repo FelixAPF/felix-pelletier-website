@@ -24,7 +24,7 @@ jobs:
       working-directory: ./felix-pelletier-website # Assuming your Angular app is in the 'client' subdirectory
 
     - name: Build Angular Web App
-      run: npm run build --configuration production # Uses the build script from your Angular project's package.json
+      run: npm run build # Uses the build script from your Angular project's package.json
       working-directory: ./felix-pelletier-website
 
     # --- Docker Setup & Build/Push Frontend ---
