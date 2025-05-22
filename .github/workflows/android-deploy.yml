@@ -1,3 +1,4 @@
+# .github/workflows/frontend-docker-deploy.yml (or your preferred filename)
 name: Build Frontend Docker Image & Deploy
 
 on:
@@ -16,16 +17,31 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # Use your project's Node.js version (as specified in your logs)
+        node-version: '20' # Use your project's Node.js version
 
-    # --- Client (Angular Frontend) Build ---
-    - name: Install Client Project Dependencies
+    # --- Angular Frontend Build (at repository root) ---
+    - name: Install Project Dependencies
       run: npm install
-      working-directory: ./felix-pelletier-website # Assuming your Angular app is in the 'client' subdirectory
+      # working-directory removed, commands run at root
 
     - name: Build Angular Web App
-      run: npx ng build --configuration=production
-      working-directory: ./felix-pelletier-website
+      run: npx ng build --configuration production
+      # working-directory removed, commands run at root
+
+    - name: List output of Angular build # DEBUGGING STEP
+      run: ls -R ./dist
+      # working-directory removed, command runs at root
+
+    - name: Check for .dockerignore in root directory # DEBUGGING STEP
+      run: |
+        echo "Checking for .dockerignore in root directory..."
+        if [ -f ".dockerignore" ]; then
+          echo "Found .dockerignore in root. Contents:"
+          cat .dockerignore
+        else
+          echo "No .dockerignore file found in root directory."
+        fi
+      # working-directory removed, command runs at root
 
     # --- Docker Setup & Build/Push Frontend ---
     - name: Set up Docker Buildx
@@ -40,6 +56,13 @@ jobs:
     - name: Build and push Frontend image
       uses: docker/build-push-action@v6
       with:
-        context: ./felix-pelletier-website # Assumes your Angular app's Dockerfile is in the 'client' directory
+        context: . # Context is now the repository root, where Dockerfile and 'dist' folder are
         push: true
-        tags: felixapelletierr/fp-developpement:latest # Your new frontend image tag
+        tags: felixapelletierr/fp-developpement:latest # Your frontend image tag
+        # file: ./Dockerfile # Optional: if your Dockerfile has a non-standard name or location relative to context
+
+    # --- Commented out Backend Steps ---
+    # ... (Backend steps remain commented out) ...
+
+    # --- Commented out Android Build Steps ---
+    # ... (Android steps remain commented out) ...
