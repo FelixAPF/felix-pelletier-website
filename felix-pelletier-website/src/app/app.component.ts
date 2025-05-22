@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './layout/navbar/navbar.component'; // Import Navbar
+import { FooterComponent } from './layout/footer/footer.component'; // Import Footer
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // Assuming standalone setup
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavbarComponent, // Add NavbarComponent
+    FooterComponent  // Add FooterComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Your app.component.css file
 })
 export class AppComponent {
   title = 'felix-pelletier-website';

@@ -1,8 +1,9 @@
-<div class="bg-blue-500 text-white p-6 m-4 rounded-lg shadow-lg">
-  <p class="text-2xl font-bold mb-2">Tailwind CSS Test!</p>
-  <p class="text-sm italic">If you see this with a blue background, white text, padding, margin, rounded corners, and a shadow, Tailwind is working!</p>
-</div>
+<div class="flex flex-col min-h-screen bg-gray-100 dark:bg-dark-bg">
+  <app-navbar></app-navbar>
 
-<main class="container mx-auto px-4 py-8">
-  <router-outlet #outlet="outlet"></router-outlet>
-</main>
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+</div>

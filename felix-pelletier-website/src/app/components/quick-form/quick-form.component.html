@@ -1,0 +1,54 @@
+<div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl max-w-2xl mx-auto transition-all duration-300 hover:shadow-primary/20 hover:shadow-xl">
+  <p-toast></p-toast>
+  <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <h3 class="text-2xl font-semibold text-center text-primary dark:text-blue-400 mb-8">Let's Build Something Amazing!</h3>
+
+    <div class="field">
+      <label for="nom" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom <span class="text-red-500">*</span></label>
+      <input id="nom" type="text" pInputText formControlName="nom" class="w-full p-inputtext-lg dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" placeholder="Votre nom complet"
+             [ngClass]="{'ng-invalid ng-dirty': f['nom'].invalid && (f['nom'].dirty || f['nom'].touched)}" />
+      <small *ngIf="f['nom'].invalid && (f['nom'].dirty || f['nom'].touched)" class="p-error block mt-1">
+        <span *ngIf="f['nom'].errors?.['required']">Name is required.</span>
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="telephone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Numéro de téléphone <span class="text-red-500">*</span></label>
+      <p-inputMask id="telephone" mask="(999) 999-9999" formControlName="telephone" placeholder="(123) 456-7890" styleClass="w-full p-inputtext-lg dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
+                   [ngClass]="{'ng-invalid ng-dirty': f['telephone'].invalid && (f['telephone'].dirty || f['telephone'].touched)}"></p-inputMask>
+      <small *ngIf="f['telephone'].invalid && (f['telephone'].dirty || f['telephone'].touched)" class="p-error block mt-1">
+        <span *ngIf="f['telephone'].errors?.['required']">Phone number is required.</span>
+        <span *ngIf="f['telephone'].errors?.['pattern']">Invalid phone number format.</span>
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Adresse Courriel <span class="text-red-500">*</span></label>
+      <input id="email" type="email" pInputText formControlName="email" class="w-full p-inputtext-lg dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" placeholder="your.email@example.com"
+             [ngClass]="{'ng-invalid ng-dirty': f['email'].invalid && (f['email'].dirty || f['email'].touched)}" />
+      <small *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)" class="p-error block mt-1">
+        <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+        <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="entreprise" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nom d'entreprise (si existante)</label>
+      <input id="entreprise" type="text" pInputText formControlName="entreprise" class="w-full p-inputtext-lg dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" placeholder="Optional company name" />
+    </div>
+
+    <div class="field">
+      <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message <span class="text-red-500">*</span></label>
+      <textarea id="message" rows="5" pInputTextarea formControlName="message" class="w-full p-inputtext-lg dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" placeholder="Describe your project or inquiry..." [autoResize]="true"
+                [ngClass]="{'ng-invalid ng-dirty': f['message'].invalid && (f['message'].dirty || f['message'].touched)}"></textarea>
+      <small *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)" class="p-error block mt-1">
+        <span *ngIf="f['message'].errors?.['required']">Message is required.</span>
+        <span *ngIf="f['message'].errors?.['minlength']">Message must be at least 10 characters.</span>
+      </small>
+    </div>
+
+    <div class="text-center mt-8">
+      <p-button label="Send Request" icon="pi pi-send" type="submit" styleClass="p-button-lg p-button-primary w-full sm:w-auto" [loading]="isLoading" [disabled]="quoteForm.invalid || isLoading"></p-button>
+    </div>
+  </form>
+</div>

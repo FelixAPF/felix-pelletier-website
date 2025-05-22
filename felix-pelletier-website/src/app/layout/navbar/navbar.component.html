@@ -1,0 +1,17 @@
+<p-menubar [model]="items" class="bg-gray-800 text-white rounded-none sticky top-0 z-50 shadow-lg">
+  <ng-template pTemplate="start">
+    <div class="flex items-center mr-auto">
+      <a routerLink="/" class="flex items-center cursor-pointer mr-6">
+        <img src="assets/logo.svg" alt="Logo" class="h-8 mr-2"> <span class="text-xl font-mono font-bold text-primary hover:text-secondary transition-colors">
+          FelixPelletier.dev
+        </span>
+      </a>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="item" let-item let-root="root">
+    <a [routerLink]="item.routerLink" class="p-menuitem-link flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-colors" routerLinkActive="bg-primary text-white">
+      <span [class]="item.icon" class="mr-2"></span>
+      <span>{{ item.label }}</span>
+    </a>
+  </ng-template>
+</p-menubar>
