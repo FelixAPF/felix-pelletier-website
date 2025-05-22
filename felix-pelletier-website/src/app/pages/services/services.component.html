@@ -1,8 +1,8 @@
 <div class="animate-fadeIn">
   <header class="py-12 md:py-16 bg-gradient-to-r from-gray-700 via-gray-800 to-dark-bg text-white rounded-xl shadow-xl mb-12 md:mb-16 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold">My Web Development Services</h1>
+    <h1 class="text-4xl md:text-5xl font-bold">{{ 'SERVICES_PAGE.HEADER_TITLE' | translate }}</h1>
     <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-      Offering a range of services to bring your digital ideas to life with precision and flair.
+      {{ 'SERVICES_PAGE.HEADER_SUBTITLE' | translate }}
     </p>
   </header>
 
@@ -13,16 +13,18 @@
       <div class="p-6 flex-grow">
         <div class="flex items-center mb-4">
           <span class="{{service.icon}} text-3xl text-primary dark:text-blue-400 mr-3 p-3 bg-primary/10 dark:bg-blue-400/10 rounded-full"></span>
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ service.title }}</h3>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ service.titleKey | translate }}</h3>
         </div>
         <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
-          {{ service.description }}
+          {{ service.descriptionKey | translate }}
         </p>
       </div>
       <div class="p-6 bg-gray-50 dark:bg-gray-700/50 border-t dark:border-gray-700">
-        <h4 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">Key Technologies:</h4>
+        <h4 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3">{{ 'SERVICES_PAGE.TECH_HEADING' | translate }}</h4>
         <div class="flex flex-wrap gap-2">
-          <p-tag *ngFor="let tech of service.technologies" [value]="tech" severity="info" styleClass="bg-primary/80 text-white dark:bg-blue-500/80 dark:text-white text-xs"></p-tag>
+        <div class="flex flex-wrap gap-2">
+        <p-tag *ngFor="let techKey of service.technologyKeys" [value]="techKey | translate" severity="info" styleClass="bg-primary/80 text-white dark:bg-blue-500/80 dark:text-white text-xs"></p-tag>
+        </div>          
         </div>
       </div>
     </div>

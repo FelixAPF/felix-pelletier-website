@@ -1,17 +1,12 @@
 <section class="py-16 md:py-24 text-center bg-gradient-to-br from-primary via-blue-600 to-secondary text-white rounded-xl shadow-2xl overflow-hidden">
   <div class="container mx-auto px-4 relative z-10">
-    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-      </div>
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInDown">
-      Crafting <span class="text-yellow-300">Innovative</span> Web Solutions
-    </h1>
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInDown" [innerHTML]="'MAIN_PAGE.HERO_TITLE' | translate"></h1>
     <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto animate-fadeInUp animation-delay-300">
-      From concept to deployment, I deliver high-quality, scalable, and user-centric web applications.
-      Let's turn your vision into a digital masterpiece.
+      {{ 'MAIN_PAGE.HERO_SUBTITLE' | translate }}
     </p>
     <div class="space-x-4 animate-fadeInUp animation-delay-600">
-      <button pButton type="button" label="Explore Services" icon="pi pi-briefcase" class="p-button-lg p-button-secondary" routerLink="/services"></button>
-      <button pButton type="button" label="Get a Quote" icon="pi pi-arrow-down" (click)="scrollToForm()" class="p-button-lg p-button-outlined p-button-secondary"></button>
+      <button pButton type="button" [label]="'MAIN_PAGE.EXPLORE_SERVICES_BTN' | translate" icon="pi pi-briefcase" class="p-button-lg p-button-secondary" routerLink="/services"></button>
+      <button pButton type="button" [label]="'MAIN_PAGE.GET_QUOTE_BTN' | translate" icon="pi pi-arrow-down" (click)="scrollToForm()" class="p-button-lg p-button-outlined p-button-secondary"></button>
     </div>
   </div>
 </section>
@@ -24,25 +19,25 @@
 
 <section class="py-16 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
   <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl font-semibold text-primary dark:text-blue-400 mb-4">Why Work With Me?</h2>
+    <h2 class="text-3xl font-semibold text-primary dark:text-blue-400 mb-4">{{ 'MAIN_PAGE.WHY_WORK_TITLE' | translate }}</h2>
     <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-      I am dedicated to providing modern, efficient, and tailored web development services. My focus on clean code, user experience, and cutting-edge technologies ensures your project's success.
+      {{ 'MAIN_PAGE.WHY_WORK_PARAGRAPH' | translate }}
     </p>
     <div class="grid md:grid-cols-3 gap-8 text-left">
       <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow animate-slideUp">
         <i class="pi pi-bolt text-3xl text-primary dark:text-blue-400 mb-3"></i>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Modern Technologies</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Utilizing Angular, PrimeNG, Tailwind CSS, and other up-to-date frameworks and libraries.</p>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{{ 'MAIN_PAGE.TECH_TITLE' | translate }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">{{ 'MAIN_PAGE.TECH_DESC' | translate }}</p>
       </div>
       <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow animate-slideUp animation-delay-200">
         <i class="pi pi-users text-3xl text-primary dark:text-blue-400 mb-3"></i>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Client-Centric Approach</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Clear communication and a focus on your specific needs and goals throughout the project.</p>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{{ 'MAIN_PAGE.CLIENT_FOCUS_TITLE' | translate }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">{{ 'MAIN_PAGE.CLIENT_FOCUS_DESC' | translate }}</p>
       </div>
       <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow animate-slideUp animation-delay-400">
         <i class="pi pi-palette text-3xl text-primary dark:text-blue-400 mb-3"></i>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Elegant Design</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Creating intuitive and visually appealing interfaces that enhance user engagement.</p>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{{ 'MAIN_PAGE.DESIGN_TITLE' | translate }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">{{ 'MAIN_PAGE.DESIGN_DESC' | translate }}</p>
       </div>
     </div>
   </div>

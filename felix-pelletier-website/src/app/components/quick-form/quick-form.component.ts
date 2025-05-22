@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { CardModule } from 'primeng/card'; // Optional: for styling
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quick-form',
@@ -18,6 +19,7 @@ import { CardModule } from 'primeng/card'; // Optional: for styling
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    TranslateModule,
     HttpClientModule,
     InputTextModule,
     InputMaskModule,

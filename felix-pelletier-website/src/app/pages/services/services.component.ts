@@ -1,12 +1,14 @@
+// src/app/pages/services/services.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardModule } from 'primeng/card'; // For styling service items
-import { TagModule } from 'primeng/tag';   // For adding tech tags
+import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
+import { TranslateModule } from '@ngx-translate/core'; // Import TranslateModule
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, CardModule, TagModule],
+  imports: [CommonModule, CardModule, TagModule, TranslateModule], // Add TranslateModule
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
@@ -14,39 +16,72 @@ export class ServicesComponent {
   services = [
     {
       icon: 'pi pi-fw pi-desktop',
-      title: 'Custom Web Application Development',
-      description: 'Full-cycle development of tailor-made web applications, from UI/UX design to robust backend implementation and deployment. Specializing in creating interactive and dynamic user experiences.',
-      technologies: ['Angular', 'React', 'Node.js', 'Python (Django/Flask)', 'Databases (SQL/NoSQL)']
+      titleKey: 'SERVICES_PAGE.SERVICE_1_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_1_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.ANGULAR',
+        'SERVICES_PAGE.TECHNOLOGIES.REACT',
+        'SERVICES_PAGE.TECHNOLOGIES.NODEJS',
+        'SERVICES_PAGE.TECHNOLOGIES.PYTHON_DJANGO_FLASK',
+        'SERVICES_PAGE.TECHNOLOGIES.DATABASES_SQL_NOSQL'
+      ]
     },
     {
       icon: 'pi pi-fw pi-palette',
-      title: 'Frontend Development & UI/UX',
-      description: 'Crafting responsive, accessible, and visually stunning user interfaces using modern frontend frameworks and libraries. Focus on usability, performance, and cross-browser compatibility.',
-      technologies: ['Angular', 'PrimeNG', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript/TypeScript']
+      titleKey: 'SERVICES_PAGE.SERVICE_2_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_2_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.ANGULAR',
+        'SERVICES_PAGE.TECHNOLOGIES.PRIMENG',
+        'SERVICES_PAGE.TECHNOLOGIES.TAILWINDCSS',
+        'SERVICES_PAGE.TECHNOLOGIES.HTML5',
+        'SERVICES_PAGE.TECHNOLOGIES.CSS3',
+        'SERVICES_PAGE.TECHNOLOGIES.JAVASCRIPT_TYPESCRIPT'
+      ]
     },
     {
       icon: 'pi pi-fw pi-cloud-upload',
-      title: 'API Development & Integration',
-      description: 'Designing and building secure, scalable RESTful APIs. Integrating third-party services and APIs to extend application functionality and streamline workflows.',
-      technologies: ['Node.js (Express)', 'Python (Flask/FastAPI)', 'RESTful APIs', 'GraphQL', 'OAuth']
+      titleKey: 'SERVICES_PAGE.SERVICE_3_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_3_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.NODEJS_EXPRESS',
+        'SERVICES_PAGE.TECHNOLOGIES.PYTHON_FLASK_FASTAPI',
+        'SERVICES_PAGE.TECHNOLOGIES.RESTFUL_APIS',
+        'SERVICES_PAGE.TECHNOLOGIES.GRAPHQL',
+        'SERVICES_PAGE.TECHNOLOGIES.OAUTH'
+      ]
     },
     {
       icon: 'pi pi-fw pi-mobile',
-      title: 'Responsive & Mobile-First Design',
-      description: 'Ensuring your web applications look and perform flawlessly on all devices, from desktops to smartphones. Adhering to mobile-first principles for optimal user experience.',
-      technologies: ['Tailwind CSS', 'CSS Grid', 'Flexbox', 'Media Queries']
+      titleKey: 'SERVICES_PAGE.SERVICE_4_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_4_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.TAILWINDCSS',
+        'SERVICES_PAGE.TECHNOLOGIES.CSS_GRID',
+        'SERVICES_PAGE.TECHNOLOGIES.FLEXBOX',
+        'SERVICES_PAGE.TECHNOLOGIES.MEDIA_QUERIES'
+      ]
     },
     {
       icon: 'pi pi-fw pi-cog',
-      title: 'Website Maintenance & Support',
-      description: 'Providing ongoing support, updates, and maintenance services to ensure your web applications remain secure, up-to-date, and performant.',
-      technologies: ['Version Control (Git)', 'CI/CD', 'Performance Monitoring']
+      titleKey: 'SERVICES_PAGE.SERVICE_5_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_5_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.GIT',
+        'SERVICES_PAGE.TECHNOLOGIES.CI_CD',
+        'SERVICES_PAGE.TECHNOLOGIES.PERF_MONITORING'
+      ]
     },
     {
       icon: 'pi pi-fw pi-search',
-      title: 'Consulting & Code Audits',
-      description: 'Offering expert advice on web architecture, technology stack selection, and best practices. Performing thorough code audits to identify areas for improvement in performance, security, and maintainability.',
-      technologies: ['Best Practices', 'Code Review', 'Performance Optimization', 'Security Analysis']
+      titleKey: 'SERVICES_PAGE.SERVICE_6_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_6_DESC',
+      technologyKeys: [
+        'SERVICES_PAGE.TECHNOLOGIES.BEST_PRACTICES',
+        'SERVICES_PAGE.TECHNOLOGIES.CODE_REVIEW',
+        'SERVICES_PAGE.TECHNOLOGIES.PERF_OPTIMIZATION',
+        'SERVICES_PAGE.TECHNOLOGIES.SECURITY_ANALYSIS'
+      ]
     }
   ];
 }
