@@ -1,36 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Import CommonModule
+
+interface NavItem {
+  label: string;
+  icon?: string; // Optional icon class (e.g., for Font Awesome if you add it, or custom SVG icons)
+  routerLink: string;
+}
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, MenubarModule, RouterModule], // Add CommonModule here
+  imports: [CommonModule, RouterModule], // Add CommonModule
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'] // You can create this file if you need specific navbar styles
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  items: MenuItem[] = [];
+export class NavbarComponent {
+  isMenuOpen = false;
+  isScrolled = false;
 
-  ngOnInit() {
-    this.items = [
-      {
-        label: 'Home',
-        icon: 'pi pi-fw pi-home',
-        routerLink: ['/']
-      },
-      {
-        label: 'My Services',
-        icon: 'pi pi-fw pi-briefcase',
-        routerLink: ['/services']
-      },
-      {
-        label: 'Contact',
-        icon: 'pi pi-fw pi-envelope',
-        routerLink: ['/contact']
-      }
-    ];
+  navItems: NavItem[] = [
+    { label: 'Home', routerLink: '/', icon: 'pi pi-home' }, // Using PrimeIcons for now, can be replaced
+    { label: 'My Services', routerLink: '/services', icon: 'pi pi-briefcase' },
+    { label: 'Contact', routerLink: '/contact', icon: 'pi pi-envelope' }
+  ];
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 10;
   }
 }

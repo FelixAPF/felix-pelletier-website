@@ -3,11 +3,12 @@ import { QuickFormComponent } from '../../components/quick-form/quick-form.compo
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button'; // For any buttons on this page
 import { RouterLink } from '@angular/router';   // For routerLink
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, QuickFormComponent, ButtonModule, RouterLink],
+  imports: [CommonModule, QuickFormComponent, ButtonModule, RouterLink, TranslateModule],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })

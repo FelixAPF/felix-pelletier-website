@@ -11,5 +11,5 @@ import { CardModule } from 'primeng/card'; // For styling contact cards
 })
 export class ContactComponent {
   email = 'felix.pelletierf@hotmail.com';
-  phone = '[Your Phone Number Here - e.g., (555) 123-4567]'; // Replace with your actual phone
+  phone = '(438) 397-3301'; // Replace with your actual phone
 }
