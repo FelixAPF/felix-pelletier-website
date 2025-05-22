@@ -14,74 +14,41 @@ import { TranslateModule } from '@ngx-translate/core'; // Import TranslateModule
 })
 export class ServicesComponent {
   services = [
+    /* Application Web simple (visuelle) avec possibilité de formulaire */
     {
-      icon: 'pi pi-fw pi-desktop',
-      titleKey: 'SERVICES_PAGE.SERVICE_1_TITLE',
-      descriptionKey: 'SERVICES_PAGE.SERVICE_1_DESC',
-      technologyKeys: [
-        'SERVICES_PAGE.TECHNOLOGIES.ANGULAR',
-        'SERVICES_PAGE.TECHNOLOGIES.REACT',
-        'SERVICES_PAGE.TECHNOLOGIES.NODEJS',
-        'SERVICES_PAGE.TECHNOLOGIES.PYTHON_DJANGO_FLASK',
-        'SERVICES_PAGE.TECHNOLOGIES.DATABASES_SQL_NOSQL'
-      ]
-    },
-    {
-      icon: 'pi pi-fw pi-palette',
+      icon: 'pi pi-fw pi-server',
       titleKey: 'SERVICES_PAGE.SERVICE_2_TITLE',
       descriptionKey: 'SERVICES_PAGE.SERVICE_2_DESC',
       technologyKeys: [
         'SERVICES_PAGE.TECHNOLOGIES.ANGULAR',
-        'SERVICES_PAGE.TECHNOLOGIES.PRIMENG',
-        'SERVICES_PAGE.TECHNOLOGIES.TAILWINDCSS',
         'SERVICES_PAGE.TECHNOLOGIES.HTML5',
         'SERVICES_PAGE.TECHNOLOGIES.CSS3',
         'SERVICES_PAGE.TECHNOLOGIES.JAVASCRIPT_TYPESCRIPT'
       ]
     },
+    /* Application Web avec Serveur et base de données */
     {
-      icon: 'pi pi-fw pi-cloud-upload',
-      titleKey: 'SERVICES_PAGE.SERVICE_3_TITLE',
-      descriptionKey: 'SERVICES_PAGE.SERVICE_3_DESC',
+      icon: 'pi pi-fw pi-cog',
+      titleKey: 'SERVICES_PAGE.SERVICE_1_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_1_DESC',
       technologyKeys: [
-        'SERVICES_PAGE.TECHNOLOGIES.NODEJS_EXPRESS',
-        'SERVICES_PAGE.TECHNOLOGIES.PYTHON_FLASK_FASTAPI',
-        'SERVICES_PAGE.TECHNOLOGIES.RESTFUL_APIS',
-        'SERVICES_PAGE.TECHNOLOGIES.GRAPHQL',
-        'SERVICES_PAGE.TECHNOLOGIES.OAUTH'
-      ]
-    },
-    {
-      icon: 'pi pi-fw pi-mobile',
-      titleKey: 'SERVICES_PAGE.SERVICE_4_TITLE',
-      descriptionKey: 'SERVICES_PAGE.SERVICE_4_DESC',
-      technologyKeys: [
-        'SERVICES_PAGE.TECHNOLOGIES.TAILWINDCSS',
-        'SERVICES_PAGE.TECHNOLOGIES.CSS_GRID',
-        'SERVICES_PAGE.TECHNOLOGIES.FLEXBOX',
-        'SERVICES_PAGE.TECHNOLOGIES.MEDIA_QUERIES'
+        'SERVICES_PAGE.TECHNOLOGIES.ANGULAR',
+        'SERVICES_PAGE.TECHNOLOGIES.HTML5',
+        'SERVICES_PAGE.TECHNOLOGIES.CSS3',
+        'SERVICES_PAGE.TECHNOLOGIES.JAVASCRIPT_TYPESCRIPT',
+        'SERVICES_PAGE.TECHNOLOGIES.JAVA',
+        'SERVICES_PAGE.TECHNOLOGIES.DATABASES_SQL_NOSQL'
       ]
     },
     {
       icon: 'pi pi-fw pi-cog',
-      titleKey: 'SERVICES_PAGE.SERVICE_5_TITLE',
-      descriptionKey: 'SERVICES_PAGE.SERVICE_5_DESC',
+      titleKey: 'SERVICES_PAGE.SERVICE_3_TITLE',
+      descriptionKey: 'SERVICES_PAGE.SERVICE_3_DESC',
       technologyKeys: [
-        'SERVICES_PAGE.TECHNOLOGIES.GIT',
-        'SERVICES_PAGE.TECHNOLOGIES.CI_CD',
-        'SERVICES_PAGE.TECHNOLOGIES.PERF_MONITORING'
+        'SERVICES_PAGE.TECHNOLOGIES.JAVA',
+        'SERVICES_PAGE.TECHNOLOGIES.DATABASES_SQL_NOSQL'
+
       ]
     },
-    {
-      icon: 'pi pi-fw pi-search',
-      titleKey: 'SERVICES_PAGE.SERVICE_6_TITLE',
-      descriptionKey: 'SERVICES_PAGE.SERVICE_6_DESC',
-      technologyKeys: [
-        'SERVICES_PAGE.TECHNOLOGIES.BEST_PRACTICES',
-        'SERVICES_PAGE.TECHNOLOGIES.CODE_REVIEW',
-        'SERVICES_PAGE.TECHNOLOGIES.PERF_OPTIMIZATION',
-        'SERVICES_PAGE.TECHNOLOGIES.SECURITY_ANALYSIS'
-      ]
-    }
   ];
 }

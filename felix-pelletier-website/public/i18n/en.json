@@ -3,7 +3,7 @@
     "HOME": "Home",
     "SERVICES": "My Services",
     "CONTACT": "Contact",
-    "BRAND": "FelixPelletier.dev",
+    "BRAND": "FP Web Development",
     "OPEN_MENU": "Open main menu"
   },
   "FOOTER": {
@@ -57,9 +57,9 @@
     "HEADER_SUBTITLE": "Offering a range of services to bring your digital ideas to life with precision and flair.",
     "TECH_HEADING": "Key Technologies:",
     "SERVICE_1_TITLE": "Custom Web Application Development",
-    "SERVICE_1_DESC": "Full-cycle development of tailor-made web applications, from UI/UX design to robust backend implementation and deployment. Specializing in creating interactive and dynamic user experiences.",
+    "SERVICE_1_DESC": "Full-cycle development of tailor-made web applications, from UI/UX design to robust backend implementation and deployment. Specializing in creating interactive and dynamic user experiences. Ideal for more complex usage where certain operations are needed.",
     "SERVICE_2_TITLE": "Frontend Development & UI/UX",
-    "SERVICE_2_DESC": "Crafting responsive, accessible, and visually stunning user interfaces using modern frontend frameworks and libraries. Focus on usability, performance, and cross-browser compatibility.",
+    "SERVICE_2_DESC": "Crafting responsive, accessible, and visually stunning user interfaces using modern frontend frameworks and libraries. Focus on usability, performance, and cross-browser compatibility. Ideal for view only applications where the goal is only to display information to the user. ",
     "SERVICE_3_TITLE": "API Development & Integration",
     "SERVICE_3_DESC": "Designing and building secure, scalable RESTful APIs. Integrating third-party services and APIs to extend application functionality and streamline workflows.",
     "SERVICE_4_TITLE": "Responsive & Mobile-First Design",
@@ -71,7 +71,6 @@
     "TECHNOLOGIES": {
       "ANGULAR": "Angular",
       "REACT": "React",
-      "NODEJS": "Node.js",
       "PYTHON_DJANGO_FLASK": "Python (Django/Flask)",
       "DATABASES_SQL_NOSQL": "Databases (SQL/NoSQL)",
       "PRIMENG": "PrimeNG",
@@ -79,7 +78,7 @@
       "HTML5": "HTML5",
       "CSS3": "CSS3",
       "JAVASCRIPT_TYPESCRIPT": "JavaScript/TypeScript",
-      "NODEJS_EXPRESS": "Node.js (Express)",
+      "JAVA": "Java",
       "PYTHON_FLASK_FASTAPI": "Python (Flask/FastAPI)",
       "RESTFUL_APIS": "RESTful APIs",
       "GRAPHQL": "GraphQL",
@@ -93,7 +92,8 @@
       "BEST_PRACTICES": "Best Practices",
       "CODE_REVIEW": "Code Review",
       "PERF_OPTIMIZATION": "Performance Optimization",
-      "SECURITY_ANALYSIS": "Security Analysis"
+      "SECURITY_ANALYSIS": "Security Analysis",
+      "OTHER": "Analysis required"
     }
   },
   "CONTACT_PAGE": {

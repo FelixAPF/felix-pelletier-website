@@ -27,6 +27,12 @@
   }
 }
 
+.navbar-item-active {
+  @apply bg-blue-600;
+  color: white !important; /* Ensure text is white and highly visible */
+  font-weight: 600; /* Make active text slightly bolder */
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -48,4 +54,27 @@
      transform: translateY(0);
      opacity: 1;
  }
+}
+
+/* Global Styles */
+body {
+  @apply bg-gray-50 text-gray-800 font-sans antialiased;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold;
+}
+
+a {
+  @apply text-blue-600 hover:text-blue-800 transition-colors;
+}
+
+button {
+  @apply px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105;
 }

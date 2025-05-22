@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card'; // For styling contact cards
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, CardModule, TranslateModule, ButtonModule],
+  imports: [CommonModule, CardModule, TranslateModule, ButtonModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })

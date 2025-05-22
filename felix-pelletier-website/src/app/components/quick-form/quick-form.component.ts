@@ -48,7 +48,7 @@ export class QuickFormComponent implements OnInit {
       telephone: ['', [Validators.required, Validators.pattern(/^\(\d{3}\) \d{3}-\d{4}$/)]], // Basic US/Canada phone format
       email: ['', [Validators.required, Validators.email]],
       entreprise: [''],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      message: ['', [Validators.required]]
     });
   }
 
@@ -68,7 +68,7 @@ export class QuickFormComponent implements OnInit {
     const formData = this.quoteForm.value;
 
     // Example using Formspree.io - REPLACE 'YOUR_FORMSPREE_ID'
-    const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORMSPREE_ID'; // << --- REPLACE THIS
+    const formspreeEndpoint = 'https://formspree.io/f/mnndybrp'; // << --- REPLACE THIS
     const headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
 
     this.http.post(formspreeEndpoint, formData, { headers: headers })

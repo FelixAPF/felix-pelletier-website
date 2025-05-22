@@ -3,7 +3,7 @@
     "HOME": "Accueil",
     "SERVICES": "Mes Services",
     "CONTACT": "Contact",
-    "BRAND": "FelixPelletier.dev",
+    "BRAND": "FP Développement",
     "OPEN_MENU": "Ouvrir le menu principal"
   },
   "FOOTER": {
@@ -57,11 +57,11 @@
     "HEADER_SUBTITLE": "Une gamme de services pour donner vie à vos idées numériques avec précision et créativité.",
     "TECH_HEADING": "Technologies Clés :",
     "SERVICE_1_TITLE": "Développement d'Applications Web Sur Mesure",
-    "SERVICE_1_DESC": "Développement complet d'applications web personnalisées, de la conception UI/UX à l'implémentation backend robuste et au déploiement. Spécialisé dans la création d'expériences utilisateur interactives et dynamiques.",
+    "SERVICE_1_DESC": "Développement complet d'applications web personnalisées, de la conception UI/UX à l'implémentation backend robuste et au déploiement. Spécialisé dans la création d'expériences utilisateur interactives et dynamiques.  Idéal pour des applications nécessitant la sauvegarde de données ou ayant des opérations plus complexes.",
     "SERVICE_2_TITLE": "Développement Frontend & UI/UX",
-    "SERVICE_2_DESC": "Création d'interfaces utilisateur réactives, accessibles et visuellement impressionnantes à l'aide de frameworks et bibliothèques frontend modernes. Accent sur l'utilisabilité, la performance et la compatibilité multi-navigateurs.",
+    "SERVICE_2_DESC": "Création d'interfaces utilisateur réactives, accessibles et visuellement impressionnantes à l'aide de frameworks et bibliothèques frontend modernes. Accent sur l'utilisabilité, la performance et la compatibilité multi-navigateurs. Idéal pour des applications vitrines, qui n'a pour utilité que de présenter du contenu à l'usager.",
     "SERVICE_3_TITLE": "Développement et Intégration d'API",
-    "SERVICE_3_DESC": "Conception et construction d'API RESTful sécurisées et évolutives. Intégration de services tiers et d'API pour étendre les fonctionnalités des applications et optimiser les flux de travail.",
+    "SERVICE_3_DESC": "Conception et construction d'API RESTful sécurisées et évolutives. Intégration de services tiers et d'API pour étendre les fonctionnalités des applications et optimiser les flux de travail. Idéal pour des applications ayant déjà un interface usagé.",
     "SERVICE_4_TITLE": "Conception Responsive & Mobile-First",
     "SERVICE_4_DESC": "Assurer que vos applications web aient une apparence et fonctionnent parfaitement sur tous les appareils, des ordinateurs de bureau aux smartphones. Adhésion aux principes mobile-first pour une expérience utilisateur optimale.",
     "SERVICE_5_TITLE": "Maintenance et Support de Sites Web",
@@ -70,16 +70,13 @@
     "SERVICE_6_DESC": "Offre de conseils d'experts sur l'architecture web, la sélection de la pile technologique et les meilleures pratiques. Réalisation d'audits de code approfondis pour identifier les domaines d'amélioration en matière de performance, de sécurité et de maintenabilité.",
     "TECHNOLOGIES": {
       "ANGULAR": "Angular",
-      "REACT": "React",
-      "NODEJS": "Node.js",
-      "PYTHON_DJANGO_FLASK": "Python (Django/Flask)",
-      "DATABASES_SQL_NOSQL": "Bases de données (SQL/NoSQL)",
+      "DATABASES_SQL_NOSQL": "Bases de données (SQL)",
       "PRIMENG": "PrimeNG",
       "TAILWINDCSS": "Tailwind CSS",
       "HTML5": "HTML5",
       "CSS3": "CSS3",
       "JAVASCRIPT_TYPESCRIPT": "JavaScript/TypeScript",
-      "NODEJS_EXPRESS": "Node.js (Express)",
+      "JAVA": "Java",
       "PYTHON_FLASK_FASTAPI": "Python (Flask/FastAPI)",
       "RESTFUL_APIS": "APIs RESTful",
       "GRAPHQL": "GraphQL",
@@ -93,12 +90,13 @@
       "BEST_PRACTICES": "Meilleures Pratiques",
       "CODE_REVIEW": "Revue de Code",
       "PERF_OPTIMIZATION": "Optimisation de Performance",
-      "SECURITY_ANALYSIS": "Analyse de Sécurité"
+      "SECURITY_ANALYSIS": "Analyse de Sécurité",
+      "OTHER": "À évaluer"
     }
   },
   "CONTACT_PAGE": {
     "HEADER_TITLE": "Contactez-Moi",
-    "HEADER_SUBTITLE": "Vous avez un projet en tête ou vous voulez simplement dire bonjour ? J'aimerais avoir de vos nouvelles !",
+    "HEADER_SUBTITLE": "Vous avez un projet en tête ? J'aimerais avoir de vos nouvelles !",
     "EMAIL_CARD_TITLE": "Par Courriel",
     "EMAIL_CARD_DESC": "Pour demandes d'informations et discussions de projets.",
     "EMAIL_RESPONSE_TIME": "Je réponds généralement en 24-48 heures.",
@@ -106,7 +104,7 @@
     "PHONE_CARD_DESC": "Pour une communication plus directe.",
     "PHONE_AVAILABILITY": "Veuillez laisser un message si je ne suis pas disponible, ou envoyez un texto.",
     "LOOKING_FORWARD": "Au plaisir d'échanger avec vous !",
-    "QUICK_FORM_BTN": "Ou Utilisez le Formulaire Rapide"
+    "QUICK_FORM_BTN": "Ou utilisez le Formulaire Rapide"
   },
   "LANG_SWITCH": {
     "ENGLISH": "EN",
