@@ -1,5 +1,5 @@
 <div class="animate-fadeIn">
-  <header class="py-16 md:py-20 bg-gradient-to-r bg-test-dark to-turquoise text-white rounded-2xl shadow-xl mb-12 md:mb-16 text-center">
+  <header class="py-16 md:py-20 bg-gradient-to-r bg-test to-turquoise text-white rounded-2xl shadow-xl mb-12 md:mb-16 text-center">
     <div class="container mx-auto px-6">
       <h1 class="text-4xl md:text-5xl font-bold" [innerHTML]="'SERVICES_PAGE.HEADER_TITLE' | translate"></h1>
       <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto" [innerHTML]="'SERVICES_PAGE.HEADER_SUBTITLE' | translate"></p>
@@ -23,7 +23,7 @@
       <div class="pt-4 border-t border-gray-200 mt-auto">
         <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">{{ 'SERVICES_PAGE.TECH_HEADING' | translate }}</h4>
         <div class="flex flex-wrap gap-2">
-          <p-tag *ngFor="let techKey of service.technologyKeys" [value]="techKey | translate" severity="info" styleClass="bg-test-dark text-white text-xs"></p-tag>
+          <p-tag *ngFor="let techKey of service.technologyKeys" [value]="techKey | translate" styleClass="bg-secondary text-white text-xs"></p-tag>
         </div>
       </div>
     </div>

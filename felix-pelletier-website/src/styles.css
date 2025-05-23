@@ -68,7 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  @apply text-blue-600 hover:text-blue-800 transition-colors;
+  @apply  transition-colors;
+  color:#005d6c;
+}
+
+a:hover {
+  @apply  hover:text-blue-800
 }
 
 button {
@@ -80,10 +85,10 @@ button {
 }
 
 .bg-test{
-  background-color: #00899f;
+  background-color: #00899f !important;
 }
-.bg-test-dark{
-  background-color: #005d6c;
+.bg-secondary{
+  background-color: #005d6c !important;
 }
 
 .to-turquoise {
