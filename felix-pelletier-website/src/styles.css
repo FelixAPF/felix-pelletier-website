@@ -28,7 +28,7 @@
 }
 
 .navbar-item-active {
-  @apply bg-blue-600;
+  background-color: #00899f;
   color: white !important; /* Ensure text is white and highly visible */
   font-weight: 600; /* Make active text slightly bolder */
 }
@@ -72,9 +72,31 @@ a {
 }
 
 button {
-  @apply px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition;
+  @apply px-4 py-2 rounded-lg transition ;
 }
 
 .card {
   @apply bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105;
+}
+
+.bg-test{
+  background-color: #00899f;
+}
+.bg-test-dark{
+  background-color: #005d6c;
+}
+
+.to-turquoise {
+  background-color: #00899f;
+}
+.text-turquoise {
+  color: #00899f;
+}
+
+.text-turquoise-dark{
+  color: #005d6c;
+}
+
+.hover:text-turquoise{
+  color: #005d6c;
 }

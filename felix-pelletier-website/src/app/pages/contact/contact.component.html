@@ -1,5 +1,5 @@
 <div class="animate-fadeIn">
-  <header class="py-16 md:py-20 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white rounded-2xl shadow-xl mb-12 md:mb-16 text-center">
+  <header class="py-16 md:py-20 bg-gradient-to-r bg-test to-turquoise text-white rounded-2xl shadow-xl mb-12 md:mb-16 text-center">
     <div class="container mx-auto px-6">
       <h1 class="text-4xl md:text-5xl font-bold" [innerHTML]="'CONTACT_PAGE.HEADER_TITLE' | translate"></h1>
       <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto" [innerHTML]="'CONTACT_PAGE.HEADER_SUBTITLE' | translate"></p>
@@ -8,7 +8,7 @@
 
   <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
     <div class="card animate-slideUp"> <div class="flex items-center mb-4">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mr-4">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-turquoise mr-4">
             <i class="pi pi-envelope text-2xl"></i>
         </span>
         <div>
@@ -16,7 +16,7 @@
           <p class="text-gray-500">{{ 'CONTACT_PAGE.EMAIL_CARD_DESC' | translate }}</p>
         </div>
       </div>
-      <a [href]="'mailto:' + email" class="block text-lg font-mono text-blue-700 hover:text-blue-800 break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+      <a [href]="'mailto:' + email" class="block text-lg font-mono text-turquoise hover:text-turquoise-dark break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
         {{ email }}
       </a>
       <p class="mt-4 text-sm text-gray-600">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="card animate-slideUp animation-delay-200"> <div class="flex items-center mb-4">
-         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mr-4">
+         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-turquoise mr-4">
             <i class="pi pi-phone text-2xl"></i>
         </span>
         <div>
@@ -33,7 +33,7 @@
           <p class="text-gray-500">{{ 'CONTACT_PAGE.PHONE_CARD_DESC' | translate }}</p>
         </div>
       </div>
-      <a [href]="'tel:' + phone" class="block text-lg font-mono text-blue-700 hover:text-blue-800 break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+      <a [href]="'tel:' + phone" class="block text-lg font-mono text-turquoise hover:text-turquoise-dark break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
         {{ phone }}
       </a>
       <p class="mt-4 text-sm text-gray-600">

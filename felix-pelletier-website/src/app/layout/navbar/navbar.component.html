@@ -4,7 +4,7 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex-shrink-0">
-        <a routerLink="/" class="text-2xl font-mono font-bold text-blue-600 hover:text-blue-700 transition-colors" (click)="closeMenu()">
+        <a routerLink="/" class="text-2xl font-mono font-bold text-turquoise hover:text-turquoise-dark transition-colors" (click)="closeMenu()">
           {{ 'NAV.BRAND' | translate }}
         </a>
       </div>
@@ -21,13 +21,13 @@
         </div>
         <div class="ml-4 flex items-center border-l border-gray-300 pl-4">
           <button (click)="switchLanguage('en')" type="button"
-                  [ngClass]="currentLang === 'en' ? 'bg-blue-500 text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-blue-600 hover:bg-gray-100'"
+                  [ngClass]="currentLang === 'en' ? 'to-turquoise text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-turquoise-dark hover:bg-gray-100'"
                   class="px-2 py-1 rounded-md text-xs transition-colors !min-w-[auto]">
             {{ 'LANG_SWITCH.ENGLISH' | translate }}
           </button>
           <span class="text-gray-400 mx-1">/</span>
           <button (click)="switchLanguage('fr')" type="button"
-                  [ngClass]="currentLang === 'fr' ? 'bg-blue-500 text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-blue-600 hover:bg-gray-100'"
+                  [ngClass]="currentLang === 'fr' ? 'to-turquoise text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-turquoise-dark hover:bg-gray-100'"
                   class="px-2 py-1 rounded-md text-xs transition-colors !min-w-[auto]">
             {{ 'LANG_SWITCH.FRENCH' | translate }}
           </button>
@@ -61,14 +61,12 @@
       </a>
       <div class="pt-2 mt-2 border-t border-gray-200">
         <div class="flex justify-around items-center px-3 py-2">
-            <button (click)="switchLanguage('en')" type="button"
-                    [ngClass]="currentLang === 'en' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+            <button (click)="switchLanguage('en')" type="button" 
                     class="p-1 rounded-md text-sm w-full text-center">
               {{ 'LANG_SWITCH.ENGLISH' | translate }}
             </button>
             <span class="text-gray-300">|</span>
-            <button (click)="switchLanguage('fr')" type="button"
-                    [ngClass]="currentLang === 'fr' ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'"
+            <button (click)="switchLanguage('fr')" type="button" 
                     class="p-1 rounded-md text-sm w-full text-center">
               {{ 'LANG_SWITCH.FRENCH' | translate }}
             </button>
