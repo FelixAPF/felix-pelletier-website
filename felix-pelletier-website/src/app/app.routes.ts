@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    title: 'Felix Pelletier - Web Development', // Optional: For browser tab title
+    title: 'Développement Web', // Optional: For browser tab title
     data: { animation: 'HomePage' } // For route animations
   },
   {
