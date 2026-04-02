@@ -1,77 +1,50 @@
-<nav
-  class="sticky top-0 z-50 transition-all duration-300 ease-in-out border-b"
-  [ngClass]="isScrolled ? 'bg-white shadow-md border-gray-200' : 'bg-gray-50 border-transparent'">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <div class="flex-shrink-0">
-        <a routerLink="/" class="text-2xl font-mono font-bold text-turquoise hover:text-turquoise-dark transition-colors" (click)="closeMenu()">
-          {{ 'NAV.BRAND' | translate }}
-        </a>
-      </div>
+<div class="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none">
+  <nav class="pointer-events-auto glass-panel rounded-full px-6 py-3 flex items-center justify-between w-full max-w-5xl transition-all duration-300 border border-white/10">
+    
+    <a routerLink="/" class="text-2xl font-bold tracking-tighter text-white hover:text-turquoise transition-colors" (click)="closeMenu()">
+      {{ 'NAV.BRAND' | translate }}<span class="text-turquoise">.</span>
+    </a>
 
-      <div class="hidden md:flex md:items-center">
-        <div class="flex items-center space-x-1">
-          <a *ngFor="let item of navItems"
-             [routerLink]="item.routerLink"
-             routerLinkActive="navbar-item-active" [routerLinkActiveOptions]="{exact: true}"
-             (click)="closeMenu()"
-             class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors">
-            <i *ngIf="item.icon" [class]="item.icon + ' mr-2'"></i>{{ item.labelKey | translate }}
-          </a>
-        </div>
-        <div class="ml-4 flex items-center border-l border-gray-300 pl-4">
-          <button (click)="switchLanguage('en')" type="button"
-                  [ngClass]="currentLang === 'en' ? 'to-turquoise text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-turquoise-dark hover:bg-gray-100'"
-                  class="px-2 py-1 rounded-md text-xs transition-colors !min-w-[auto]">
-            {{ 'LANG_SWITCH.ENGLISH' | translate }}
-          </button>
-          <span class="text-gray-400 mx-1">/</span>
-          <button (click)="switchLanguage('fr')" type="button"
-                  [ngClass]="currentLang === 'fr' ? 'to-turquoise text-white font-semibold' : 'bg-transparent text-gray-600 hover:text-turquoise-dark hover:bg-gray-100'"
-                  class="px-2 py-1 rounded-md text-xs transition-colors !min-w-[auto]">
-            {{ 'LANG_SWITCH.FRENCH' | translate }}
-          </button>
-        </div>
-      </div>
-
-      <div class="md:hidden flex items-center">
-        <button (click)="toggleMenu()" type="button" class="ml-1 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" [attr.aria-expanded]="isMenuOpen">
-          <span class="sr-only">{{ 'NAV.OPEN_MENU' | translate }}</span>
-          <svg *ngIf="!isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg *ngIf="isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+    <div class="hidden md:flex items-center space-x-2">
+      <a *ngFor="let item of navItems"
+         [routerLink]="item.routerLink"
+         routerLinkActive="navbar-item-active" [routerLinkActiveOptions]="{exact: true}"
+         (click)="closeMenu()"
+         class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all">
+        <i *ngIf="item.icon" [class]="item.icon + ' mr-2 text-xs opacity-70'"></i>{{ item.labelKey | translate }}
+      </a>
+      
+      <div class="ml-4 flex items-center pl-4 border-l border-white/20 space-x-1">
+        <button (click)="switchLanguage('en')" type="button"
+                [ngClass]="currentLang === 'en' ? 'text-turquoise bg-turquoise/10' : 'text-gray-400 hover:text-white hover:bg-white/10'"
+                class="px-3 py-1.5 rounded-full text-xs font-bold transition-all">
+          EN
+        </button>
+        <button (click)="switchLanguage('fr')" type="button"
+                [ngClass]="currentLang === 'fr' ? 'text-turquoise bg-turquoise/10' : 'text-gray-400 hover:text-white hover:bg-white/10'"
+                class="px-3 py-1.5 rounded-full text-xs font-bold transition-all">
+          FR
         </button>
       </div>
     </div>
-  </div>
 
-  <div id="mobile-menu" class="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
-       [ngClass]="isMenuOpen ? 'max-h-screen bg-gray-50 shadow-lg border-t border-gray-200' : 'max-h-0'">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a *ngFor="let item of navItems"
-         [routerLink]="item.routerLink"
-         routerLinkActive="navbar-item-active"
-         [routerLinkActiveOptions]="{exact: true}"
-         (click)="closeMenu()"
-         class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors">
-        <i *ngIf="item.icon" [class]="item.icon + ' mr-2'"></i>{{ item.labelKey | translate }}
-      </a>
-      <div class="pt-2 mt-2 border-t border-gray-200">
-        <div class="flex justify-around items-center px-3 py-2">
-            <button (click)="switchLanguage('en')" type="button" 
-                    class="p-1 rounded-md text-sm w-full text-center">
-              {{ 'LANG_SWITCH.ENGLISH' | translate }}
-            </button>
-            <span class="text-gray-300">|</span>
-            <button (click)="switchLanguage('fr')" type="button" 
-                    class="p-1 rounded-md text-sm w-full text-center">
-              {{ 'LANG_SWITCH.FRENCH' | translate }}
-            </button>
-        </div>
-      </div>
+    <button (click)="toggleMenu()" class="md:hidden text-gray-300 hover:text-white p-2">
+      <i class="pi" [ngClass]="isMenuOpen ? 'pi-times' : 'pi-bars'"></i>
+    </button>
+  </nav>
+</div>
+
+<div *ngIf="isMenuOpen" class="fixed inset-0 z-40 bg-slate-base/95 backdrop-blur-lg pt-24 px-6 md:hidden animate-fadeInDown">
+  <div class="flex flex-col space-y-4 text-center">
+    <a *ngFor="let item of navItems"
+       [routerLink]="item.routerLink"
+       (click)="closeMenu()"
+       class="text-2xl font-semibold text-gray-300 hover:text-turquoise py-4 border-b border-white/10">
+      {{ item.labelKey | translate }}
+    </a>
+    <div class="flex justify-center space-x-4 pt-8">
+       <button (click)="switchLanguage('en'); closeMenu()" class="text-xl font-bold px-6 py-2 rounded-full border border-white/20">EN</button>
+       <button (click)="switchLanguage('fr'); closeMenu()" class="text-xl font-bold px-6 py-2 rounded-full border border-white/20">FR</button>
     </div>
   </div>
-</nav>
+</div>
