@@ -1,50 +1,80 @@
-<div class="animate-fadeIn">
-  <header class="py-16 md:py-20 bg-gradient-to-r bg-test to-turquoise text-white rounded-2xl shadow-xl mb-12 md:mb-16 text-center">
-    <div class="container mx-auto px-6">
-      <h1 class="text-4xl md:text-5xl font-bold" [innerHTML]="'CONTACT_PAGE.HEADER_TITLE' | translate"></h1>
-      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto" [innerHTML]="'CONTACT_PAGE.HEADER_SUBTITLE' | translate"></p>
-    </div>
-  </header>
-
-  <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-    <div class="card animate-slideUp"> <div class="flex items-center mb-4">
-        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-turquoise mr-4">
-            <i class="pi pi-envelope text-2xl"></i>
-        </span>
-        <div>
-          <h3 class="text-2xl text-gray-800">{{ 'CONTACT_PAGE.EMAIL_CARD_TITLE' | translate }}</h3>
-          <p class="text-gray-500">{{ 'CONTACT_PAGE.EMAIL_CARD_DESC' | translate }}</p>
+<div class="animate-fadeInUp pt-24 pb-20 relative z-10">
+  
+  <div class="container mx-auto px-6 mb-16 max-w-4xl">
+    <div class="glass-panel rounded-2xl border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,229,255,0.1)]">
+      
+      <div class="bg-slate-base/80 px-4 py-3 border-b border-white/10 flex items-center">
+        <div class="flex space-x-2">
+          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+        </div>
+        <div class="mx-auto font-mono text-xs text-gray-500 tracking-widest">~/network/secure-channel</div>
+      </div>
+      
+      <div class="p-8 md:p-12 bg-slate-surface/40 backdrop-blur-sm text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-4 text-white tracking-tighter">
+          <i class="pi pi-lock text-turquoise mr-4 opacity-80"></i><span [innerHTML]="'CONTACT_PAGE.HEADER_TITLE' | translate"></span>
+        </h1>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8" [innerHTML]="'CONTACT_PAGE.HEADER_SUBTITLE' | translate"></p>
+        
+        <div class="inline-block text-left bg-slate-base/80 px-6 py-3 rounded-lg border border-white/5 shadow-inner">
+          <p class="font-mono text-turquoise text-sm md:text-base typing-effect">
+            <span class="text-pink-500">await</span> <span class="text-blue-400"> sys</span>.connect()
+          </p>
         </div>
       </div>
-      <a [href]="'mailto:' + email" class="block text-lg font-mono text-turquoise hover:text-turquoise-dark break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
-        {{ email }}
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
+    
+    <div class="card group animate-popIn delay-1500"> 
+      <div class="flex items-center mb-6">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-turquoise to-blue-500 flex items-center justify-center mr-5 shadow-lg shadow-turquoise/20 group-hover:shadow-turquoise/40 transition-shadow">
+            <i class="pi pi-envelope text-2xl text-slate-base font-bold"></i>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white">{{ 'CONTACT_PAGE.EMAIL_CARD_TITLE' | translate }}</h3>
+          <p class="text-gray-400 text-sm mt-1">{{ 'CONTACT_PAGE.EMAIL_CARD_DESC' | translate }}</p>
+        </div>
+      </div>
+      
+      <a [href]="'mailto:' + email" class="flex items-center space-x-3 text-lg font-mono text-turquoise hover:text-white break-all mt-6 p-4 bg-slate-base/80 border border-white/10 rounded-xl hover:border-turquoise/50 transition-all group-hover:bg-slate-base">
+        <i class="pi pi-send opacity-50 group-hover:opacity-100 transition-opacity"></i>
+        <span>{{ email }}</span>
       </a>
-      <p class="mt-4 text-sm text-gray-600">
-        {{ 'CONTACT_PAGE.EMAIL_RESPONSE_TIME' | translate }}
+      
+      <p class="mt-5 text-xs font-mono text-gray-500 uppercase tracking-widest">
+        <i class="pi pi-clock mr-1"></i> {{ 'CONTACT_PAGE.EMAIL_RESPONSE_TIME' | translate }}
       </p>
     </div>
 
-    <div class="card animate-slideUp animation-delay-200"> <div class="flex items-center mb-4">
-         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-turquoise mr-4">
-            <i class="pi pi-phone text-2xl"></i>
-        </span>
+    <div class="card group animate-popIn delay-1700"> 
+      <div class="flex items-center mb-6">
+         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-turquoise to-blue-500 flex items-center justify-center mr-5 shadow-lg shadow-turquoise/20 group-hover:shadow-turquoise/40 transition-shadow">
+            <i class="pi pi-phone text-2xl text-slate-base font-bold"></i>
+        </div>
         <div>
-          <h3 class="text-2xl text-gray-800">{{ 'CONTACT_PAGE.PHONE_CARD_TITLE' | translate }}</h3>
-          <p class="text-gray-500">{{ 'CONTACT_PAGE.PHONE_CARD_DESC' | translate }}</p>
+          <h3 class="text-2xl font-bold text-white">{{ 'CONTACT_PAGE.PHONE_CARD_TITLE' | translate }}</h3>
+          <p class="text-gray-400 text-sm mt-1">{{ 'CONTACT_PAGE.PHONE_CARD_DESC' | translate }}</p>
         </div>
       </div>
-      <a [href]="'tel:' + phone" class="block text-lg font-mono text-turquoise hover:text-turquoise-dark break-all mt-4 p-3 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
-        {{ phone }}
+      
+      <a [href]="'tel:' + phone" class="flex items-center space-x-3 text-lg font-mono text-turquoise hover:text-white break-all mt-6 p-4 bg-slate-base/80 border border-white/10 rounded-xl hover:border-turquoise/50 transition-all group-hover:bg-slate-base">
+        <i class="pi pi-mobile opacity-50 group-hover:opacity-100 transition-opacity"></i>
+        <span>{{ phone }}</span>
       </a>
-      <p class="mt-4 text-sm text-gray-600">
-        {{ 'CONTACT_PAGE.PHONE_AVAILABILITY' | translate }}
+      
+      <p class="mt-5 text-xs font-mono text-gray-500 uppercase tracking-widest">
+        <i class="pi pi-calendar mr-1"></i> {{ 'CONTACT_PAGE.PHONE_AVAILABILITY' | translate }}
       </p>
     </div>
   </div>
 
-  <div class="text-center mt-16">
-    <p class="text-gray-700 text-lg" [innerHTML]="'CONTACT_PAGE.LOOKING_FORWARD' | translate"></p>
-    <button pButton type="button" [label]="'CONTACT_PAGE.QUICK_FORM_BTN' | translate" icon="pi pi-file-edit"
-            class="mt-6" routerLink="/" fragment="quick-form-section"></button>
+  <div class="text-center mt-24 px-6 animate-popIn delay-1900">
+    <p class="text-gray-400 text-lg mb-8" [innerHTML]="'CONTACT_PAGE.LOOKING_FORWARD' | translate"></p>
+    <button pButton type="button" [label]="'CONTACT_PAGE.QUICK_FORM_BTN' | translate" icon="pi pi-bolt"
+            class="px-8 py-4 bg-turquoise text-slate-base hover:bg-turquoise-dark !rounded-full shadow-[0_0_20px_rgba(0,229,255,0.4)]" routerLink="/" fragment="quick-form-section"></button>
   </div>
 </div>
