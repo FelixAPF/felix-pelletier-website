@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 // PrimeNG Modules
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
-import { Textarea } from 'primeng/inputtextarea';
+import { TextareaModule } from 'primeng/textarea';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -23,7 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
     HttpClientModule,
     InputTextModule,
     InputMaskModule,
-    Textarea,
+    TextareaModule,
     ButtonModule,
     ToastModule,
     CardModule

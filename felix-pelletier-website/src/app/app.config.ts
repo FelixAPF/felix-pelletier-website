@@ -5,10 +5,11 @@ import  Lara from '@primeng/themes/lara';
 
 
 import { routes } from './app.routes';
-import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { providePrimeNG } from 'primeng/config';
-import { provideAnimations } from '@angular/platform-browser/animations'; // Ensure this is here
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser'; // Ensure this is here
 
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
@@ -23,7 +24,7 @@ const routerOptions: ExtraOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),     
       provideRouter(routes, withInMemoryScrolling(routerOptions)), // <--- APPLY SCROLLING OPTIONS HERE
-        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClient(withFetch(), withInterceptorsFromDi()),
             provideAnimations(),
         providePrimeNG({
       theme: {
@@ -44,7 +45,7 @@ export const appConfig: ApplicationConfig = {
       defaultLanguage: 'fr' // Set a default language
 
     })
-  ])
+  ]), provideClientHydration(withEventReplay())
     ]
 };
 

@@ -25,13 +25,18 @@
                 "glob": "**/*",
                 "input": "public"
               },
-                "src/i18n"
+              "src/i18n"
             ],
-            "styles": [            
+            "styles": [
               "src/styles.css",
-              "node_modules/primeicons/primeicons.css"            
+              "node_modules/primeicons/primeicons.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {

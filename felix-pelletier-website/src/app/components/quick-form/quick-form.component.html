@@ -34,7 +34,7 @@
 
     <div class="field">
       <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">{{ 'QUICK_FORM.MESSAGE_LABEL' | translate }} <span class="text-red-500">*</span></label>
-      <textarea id="message" rows="5" pInputTextarea formControlName="message" class="w-full p-inputtext-lg" [placeholder]="'QUICK_FORM.MESSAGE_PLACEHOLDER' | translate" [autoResize]="true"
+      <textarea id="message" rows="5" pTextarea formControlName="message" class="w-full p-inputtext-lg" [placeholder]="'QUICK_FORM.MESSAGE_PLACEHOLDER' | translate" [autoResize]="true"
                 [ngClass]="{'ng-invalid ng-dirty': f['message'].invalid && (f['message'].dirty || f['message'].touched)}"></textarea>
       <small *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)" class="p-error block mt-1 text-red-500 text-xs">
         </small>
