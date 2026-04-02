@@ -24,8 +24,8 @@ jobs:
       run: ls -la
 
     - name: Install Project Dependencies
-          run: npm install --legacy-peer-deps
-          working-directory: ./felix-pelletier-website
+      run: npm install --legacy-peer-deps
+      working-directory: ./felix-pelletier-website
 
     - name: Build Angular Web App
       run: npx ng build --configuration production # Or npx ng build --configuration=production
